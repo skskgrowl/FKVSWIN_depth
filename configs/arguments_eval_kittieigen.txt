@@ -1,0 +1,16 @@
+--model_name fkvswin_kittieigen
+--encoder large07
+--dataset kitti
+--input_height 352
+--input_width 1216
+--max_depth 80.0
+--do_kb_crop
+
+--data_path_eval ../GLPDepth-main/data/kitti/raw_data/
+--gt_path_eval ../GLPDepth-main/data/kitti/data_depth_annotated/
+--filenames_file_eval data_splits/eigen_test_files_with_gt2.txt
+--min_depth_eval 0.001
+--max_depth_eval 80
+--garg_crop
+
+--checkpoint_path models/fkvswin_kittieigen/model-35705-best_abs_rel_0.05249
