@@ -79,10 +79,10 @@ class FkvSwinDepth(nn.Module):
         win = 7
         crf_dims = [128, 256, 512, 1024]
         v_dims = [64, 128, 256, embed_dim]
-        self.fkv3 = FKVSWIN(input_dim=in_channels[3], embed_dim=crf_dims[3], window_size=win, v_dim=v_dims[3], num_heads=32)
-        self.fkv2 = FKVSWIN(input_dim=in_channels[2], embed_dim=crf_dims[2], window_size=win, v_dim=v_dims[2], num_heads=16)
-        self.fkv1 = FKVSWIN(input_dim=in_channels[1], embed_dim=crf_dims[1], window_size=win, v_dim=v_dims[1], num_heads=8)
-        self.fkv0 = FKVSWIN(input_dim=in_channels[0], embed_dim=crf_dims[0], window_size=win, v_dim=v_dims[0], num_heads=4)
+        self.crf3 = FKVSWIN(input_dim=in_channels[3], embed_dim=crf_dims[3], window_size=win, v_dim=v_dims[3], num_heads=32)
+        self.crf2 = FKVSWIN(input_dim=in_channels[2], embed_dim=crf_dims[2], window_size=win, v_dim=v_dims[2], num_heads=16)
+        self.crf1 = FKVSWIN(input_dim=in_channels[1], embed_dim=crf_dims[1], window_size=win, v_dim=v_dims[1], num_heads=8)
+        self.crf0 = FKVSWIN(input_dim=in_channels[0], embed_dim=crf_dims[0], window_size=win, v_dim=v_dims[0], num_heads=4)
 
         self.decoder = PSP(**decoder_cfg)
         self.disp_head1 = DispHead(input_dim=crf_dims[0])
@@ -136,13 +136,13 @@ class FkvSwinDepth(nn.Module):
 
         ppm_out = self.decoder(feats)
 
-        e3 = self.fkv3(feats[3], ppm_out)
+        e3 = self.crf3(feats[3], ppm_out)
         e3 = nn.PixelShuffle(2)(e3)
-        e2 = self.fkv2(feats[2], e3)
+        e2 = self.crf2(feats[2], e3)
         e2 = nn.PixelShuffle(2)(e2)
-        e1 = self.fkv1(feats[1], e2)
+        e1 = self.crf1(feats[1], e2)
         e1 = nn.PixelShuffle(2)(e1)
-        e0 = self.fkv0(feats[0], e1)
+        e0 = self.crf0(feats[0], e1)
 
         if self.up_mode == 'mask':
             mask = self.mask_head(e0)
