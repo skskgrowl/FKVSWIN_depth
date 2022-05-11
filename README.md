@@ -47,10 +47,10 @@ python fkvswin/eval.py configs/arguments_eval_kittieigen.txt
 ```
 
 ## Models
-| Model | Abs.Rel. | Sqr.Rel | RMSE | RMSElog | a1 | a2 | a3| SILog| 
-| :--- | :---: | :---: | :---: |  :---: |  :---: |  :---: |  :---: |  :---: |
-|[NYUv2](https://pan.baidu.com/s/1vNoHIH3bunmI5d0wL0yzQQ) | 0.0952 | 0.0443 | 0.3310 | 0.1185 | 0.923 | 0.992 | 0.998 | 9.1023 |
-|[KITTI_Eigen](https://pan.baidu.com/s/1dMsNL6wralGAd4UFcp8Acw) | 0.0520 | 0.1482 | 2.0716 | 0.0780 | 0.975 | 0.997 | 0.999 | 6.9859 |
+| Model | Abs.Rel. | Sqr.Rel | RMSE | RMSElog | a1 | a2 | a3| 
+| :--- | :---: | :---: | :---: |  :---: |  :---: |  :---: |  :---: |
+|[NYUv2](https://pan.baidu.com/s/1vNoHIH3bunmI5d0wL0yzQQ) | 0.0900 | 0.0433 | 0.3280 | 0.1170 | 0.929 | 0.990 | 0.998 |
+|[KITTI_Eigen](https://pan.baidu.com/s/1dMsNL6wralGAd4UFcp8Acw) | 0.0520 | 0.1532 | 2.111 | 0.079 | 0.974 | 0.997 | 0.999 |
 The code is:pfkv
 
 ## Demo
