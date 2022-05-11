@@ -63,3 +63,4 @@ python fkvswin/test.py --data_path datasets/test_data --dataset nyu --filenames_
 ## Acknowledgements
 Thanks to Jin Han Lee for opening source of the excellent work [BTS](https://github.com/cleinc/bts).
 Thanks to Microsoft Research Asia for opening source of the excellent work [Swin Transformer](https://github.com/microsoft/Swin-Transformer).
+Thanks to Yuan Gu Dai Zhu Tan for opening source of the excellent work [NewCRF](https://github.com/aliyun/NeWCRFs)
