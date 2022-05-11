@@ -1,4 +1,5 @@
-
+## My Paper Title
+This repository is the official implementation of My Paper Title.
 ## Contents
 1. [Installation](#installation)
 2. [Datasets](#datasets)
@@ -57,19 +58,6 @@ Test images with the indoor model:
 ```
 python fkvswin/test.py --data_path datasets/test_data --dataset nyu --filenames_file data_splits/test_list.txt --checkpoint_path model_nyu.ckpt --max_depth 10 --save_viz
 ```
-
-Play with the live demo from a video or your webcam:
-```
-python fkvswin/demo.py --dataset nyu --checkpoint_path model_zoo/model_nyu.ckpt --max_depth 10 --video video.mp4
-```
-
-![Output1](files/output_nyu1_compressed.gif)
-
-[Demo video1](https://www.youtube.com/watch?v=RrWQIpXoP2Y)
-
-[Demo video2](https://www.youtube.com/watch?v=fD3sWH_54cg)
-
-[Demo video3](https://www.youtube.com/watch?v=IztmOYZNirM)
 
 ## Acknowledgements
 Thanks to Jin Han Lee for opening source of the excellent work [BTS](https://github.com/cleinc/bts).
