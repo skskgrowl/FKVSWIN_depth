@@ -11,7 +11,7 @@ from .feature_enhance import FENeck
 
 class FkvSwinDepth(nn.Module):
     """
-    Depth network based on neural window FC-CRFs architecture.
+    Depth network based on Polarized Fusion Key and Vlue Swin Transformer architecture.
     """
     def __init__(self, version=None, inv_depth=False, pretrained=None, 
                     frozen_stages=-1, min_depth=0.1, max_depth=100.0, **kwargs):
